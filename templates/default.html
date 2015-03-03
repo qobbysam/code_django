@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./static/css/bootstrap-theme.css">
+		
+		<link rel="stylesheet" type="text/css" href="./static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="./static/css/default.css">
+		<script src="./static/js/vendor/jquery.js"></script>
+		<script type="text/javascript" src = "./static/js/vendor/bootstrap.js"></script>
+		  <meta charset="UTF-8">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+	</head>
+	
+	
+	
+	<body>
+	<div>
+		
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-login" >
+	            <form action = "/loginU/" method="post">
+	            <h1 >Admin</h1>
+	            {% csrf_token %}
+	            <input type="text" name= "username" class="form-control input-sm chat-input" placeholder="username" />
+	            </br>
+	            <input type="password" name="password" class="form-control input-sm chat-input" placeholder="password" />
+	            </br>
+	            <input type = 'submit' value=" log In" />
+	            </form>  
+        
+        	</div>
+            
+        
+        </div>
+        <div class = " col-md-6">
+        	<h1> Clients</h1>
+        	<p>can access page here</p>
+
+        	<a href="/firstview" class = "btn btn-primary btn-md"> Here </a>
+
+        </div>
+
+    </div>
+</div>
+	
+	
+	
+	</body>
+</html>

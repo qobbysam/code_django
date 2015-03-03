@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/./static/css/bootstrap-theme.css">
+		
+		<link rel="stylesheet" type="text/css" href="/./static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/./static/css/Custom.css">
+		<script src="/./static/js/vendor/jquery.js"></script>
+		<script type="text/javascript" src = "/./static/js/vendor/bootstrap.js"></script>
+
+	</head>
+
+	<body>
+	<!-- This is for the top -->
+ 		<nav class="navbar navbar-default" id = "mynav">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#info" data-toggle="modal">File</a>
+			    </div>
+			 	</div>
+
+		</nav>
+		<!-- Top is ending -->
+		<!-- Chat side is starting -->
+	<form id = 'message'>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-4">
+					
+					<textarea id = "uName" placeholder = "username"></textarea>
+			
+					<textarea id="topleftcol" placeholder ="message"></textarea>
+					<br>
+					<button id = "send" class="btn btn-default">Send</button>
+					<br>
+					
+					<div class="downleftcol panel-body">
+						<ul class="chat">
+							<div id = "out"class=" chat-body clearfix"></div>
+							<li></li>
+						</ul>
+
+					</div>
+				</div>
+				</form>
+			<!-- chat side is Ending -->	
+			<!-- Tabs for Python and Java -->
+				<div class = "col-lg-8">
+				
+				<form id = 'code'>
+			<ul class="nav nav-tabs" role="tablist" id="myTab">
+			  <li role="presentation" class="active"><a href="#python" aria-controls="home" role="tab" data-toggle="tab">Python</a></li>
+			  <li role="presentation"><a href="#java" aria-controls="profile" role="tab" data-toggle="tab">Java</a></li>
+			</ul>
+
+			<div class="tab-content">
+			  <div role="tabpanel" class="tab-pane active" id="python">
+			  <TEXTAREA class = "rightcols" id = "mypy"></TEXTAREA>
+			  </div>
+			  <div role="tabpanel" class="tab-pane" id="java">
+			  	<textarea class = "rightcols" id = "myjav"></textarea>
+			  </div>
+			</div>
+
+				</div>
+				</form>
+				<!-- Tabs for python and java ending -->
+			</div>
+		</div>
+		<!-- Javascript to show tabs -->
+			<script>
+			  $(function () {
+			    $('#myTab a:first').tab('show')
+			  })
+			</script>
+
+<!-- Login side starting -->
+
+	<div class="modal fade" id = "info" role = "dialog">
+		<div class="modal-dialog">
+			<div class = "modal-content">
+				<div class="modal-header">
+					<h1>Enter name and Email Adress</h1>
+				</div>
+				<div class="modal-body">
+					{{forms}}
+					<button class="btn btn-default" action = "post">Submit</button>
+				</div>
+			
+				<div class="modal-footer">
+					<p>Thanks</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+<script>
+        var SOCK = {
+          host: location.hostname,
+          port: {{ socket_port }},
+          channel: '{{ socket_channel }}',
+          xhrFields: {
+        	withCredentials: true}
+        };
+        </script>
+        <script src="/./static/js/socks.js"></script>
+       <script type="text/javascript" src = "/./static/js/load.js"></script>
+ 
+	</body>
+
+
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/./static/css/bootstrap-theme.css">
+		
+		<link rel="stylesheet" type="text/css" href="/./static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/./static/css/admincustom.css">
+		<script src="/./static/js/vendor/jquery.js"></script>
+		<script type="text/javascript" src = "/./static/js/vendor/bootstrap.js"></script>
+		<script src="/./static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		  <meta charset="UTF-8">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	</head>
+
+	<body>
+	<!-- This is for the top -->
+	<form id = "message">
+ 		<nav class="navbar navbar-default" id = "mynav">
+			  <div class="container-fluid">
+			    <!-- Band and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand"  >File</a>
+			      <a class="navbar-brand" href="#info" data-toggle="modal">login</a>
+
+			 		</div>
+			 	</div>
+
+
+		</nav>
+		<!-- Top is ending -->
+		<!-- Chat side is starting -->
+		<form>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-4">
+				
+				<textarea id = "uName" placeholder = "username"></textarea>
+					<textarea id="topleftcol"></textarea>
+					<br>
+					<button id = "send" class="btn btn-default">Send</button>
+					<br>
+					<!-- <textarea id = "downleftcol"></textarea> -->
+					<div class="downleftcol panel-body">
+						<ul class="chat">
+							<div id = "out"class=" chat-body clearfix"></div>
+							<li></li>
+						</ul>
+
+					</div>
+					</div>
+				</form
+			<!-- chat side is Ending -->	
+			<!-- Tabs for Python and Java -->
+				<div class = "col-lg-6">
+	<form id = "code">
+				
+
+					<ul class="nav nav-tabs" role="tablist" id="myTab">
+					  <li role="presentation" class="active"><a href="#python" aria-controls="home" role="tab" data-toggle="tab">Python</a></li>
+					  <li role="presentation"><a href="#java" aria-controls="profile" role="tab" data-toggle="tab">Java</a></li>
+					</ul>
+
+					<div class="tab-content">
+					  <div role="tabpanel" class="tab-pane active" id="python">
+					  		<pre id="editorPY">
+	def new():
+		like = 0
+		print like
+							</pre>
+								<script>
+								    var editor = ace.edit("editorPY");
+								    editor.setTheme("ace/theme/twilight");
+								    editor.getSession().setMode("ace/mode/python");
+								</script>
+								<button class="btn btn-normal">Send</button>
+					  </div>
+					  <div role="tabpanel" class="tab-pane" id="java">
+							<pre id="editorJV">
+							Some Java code
+							</pre>
+								<script>
+								    var editor2 = ace.edit("editorJV");
+								    editor.setTheme("ace/theme/twilight");
+								    editor.getSession().setMode("ace/mode/java");
+								</script>
+
+					  	<button class="btn btn-normal" id = 'codesend'>Send</button>
+					  </div>
+					</div>
+
+				</div>
+						<!-- Tabs for python and java ending -->
+				<div class=" col-lg-2">
+
+					<div>
+						<h1>Available Chats</h1>
+					</div>
+			</div>
+
+		</div>
+		</form>
+		<!-- Javascript to show tabs -->
+			<script>
+			  $(function () {
+			    $('#myTab a:first').tab('show')
+			  })
+			</script>
+
+<!-- Login side starting -->
+
+	<div class="modal fade" id = "info" role = "dialog">
+		<div class="modal-dialog">
+			<div class = "modal-content">
+				<div class="modal-header">
+					<h1>Enter name and Email Adress</h1>
+				</div>
+				<div class="modal-body">
+					<button class="btn btn-default" action = "post">Submit</button>
+				</div>
+			
+				<div class="modal-footer">
+					<p>Thanks</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+		
+	<script>
+        var SOCK = {
+          host: location.hostname,
+          port: {{ socket_port }},
+          channel: '{{ socket_channel }}'
+        };
+        </script>
+        <script src="/./static/js/socks.js"></script>
+
+		<script type="text/javascript" src = "/./static/js/adminload.js"></script>
+
+	</body>
+
+
+
+</html>

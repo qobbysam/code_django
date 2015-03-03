@@ -1,0 +1,11 @@
+backports.ssl-match-hostname==3.4.0.2
+certifi==14.5.14
+Django==1.7.4
+django-fab-deploy==0.7.5
+ecdsa==0.13
+Fabric==1.10.1
+gunicorn==19.2.1
+paramiko==1.15.2
+pycrypto==2.6.1
+sockjs-tornado==1.0.1
+tornado==4.1
